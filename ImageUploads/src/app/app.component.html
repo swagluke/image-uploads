@@ -1,3 +1,9 @@
 <h1>
-  {{title}}
+  Featured Photos
 </h1>
+<input type="file" (change)="featuredPhotoSelected($event,'url1')"><br>
+<img *ngIf= "(featuredPhotoStream | async)?.url1 as url"  [src]="url" alt="Featured photo 1">
+<hr>
+<input type="file" (change)="featuredPhotoSelected($event,'url2')"><br>
+<img *ngIf= "(featuredPhotoStream | async)?.url2 as url"  [src]="url" alt="Featured photo 2">
+<hr>
