@@ -1,9 +1,15 @@
 <h1>
   Featured Photos
 </h1>
-<input type="file" (change)="featuredPhotoSelected($event,'url1')"><br>
-<img *ngIf= "(featuredPhotoStream | async)?.url1 as url"  [src]="url" alt="Featured photo 1">
-<hr>
-<input type="file" (change)="featuredPhotoSelected($event,'url2')"><br>
-<img *ngIf= "(featuredPhotoStream | async)?.url2 as url"  [src]="url" alt="Featured photo 2">
-<hr>
+<div fxLayoutAlign="space-around center">
+  <div>
+    <button type="button" (click)="triggerInput1(featuredPhoto1Input)">My pretty Material Design Button</button>
+    <br>
+    <input #featuredPhoto1Input style="display: none;" type="file" (change)="featuredPhotoSelected($event,'url1')"><br>
+    <img *ngIf="(featuredPhotoStream | async)?.url1 as url" [src]="url" alt="Featured photo 1">
+  </div>
+  <div>
+    <input type="file" (change)="featuredPhotoSelected($event,'url2')"><br>
+    <img *ngIf="(featuredPhotoStream | async)?.url2 as url" [src]="url" alt="Featured photo 2">
+  </div>
+</div>

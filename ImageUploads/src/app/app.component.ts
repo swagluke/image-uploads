@@ -41,4 +41,9 @@ export class AppComponent {
     storageRef.put(file, metadata);
     console.log("Uploading", file.name);
   }
+
+  triggerInput1(inputEl) {
+    inputEl.click();
+//  document.getElementById("featuredPhoto1Input").click();
+  }
 }
