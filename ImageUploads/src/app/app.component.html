@@ -13,3 +13,9 @@
     <img *ngIf="(featuredPhotoStream | async)?.url2 as url" [src]="url" alt="Featured photo 2">
   </div>
 </div>
+<hr>
+<h1>
+  Photo List
+</h1>
+<input type="file" (change)="photoSelectedForList($event)"><br>
+<img *ngFor="let photo of this.photoListStream | async" [src]="photo.url" alt="Photo in the list">
